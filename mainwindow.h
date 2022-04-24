@@ -3,8 +3,10 @@
 
 #include <QMainWindow>
 #include <QImage>
+#include <QTimer>
 #include <QGraphicsScene>
 #include "fractal_mandelbrot.h"
+#include "myscene.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,11 +21,15 @@ public:
 	~MainWindow();
 
 private slots:
-	void on_draw_fractal_clicked();
 
 private:
-	fractal_base *fractal;
-	QGraphicsScene *graphic;
-	Ui::MainWindow *ui;
+	void draw_fractal();
+
+	fractal_base	*fractal;
+	MyScene			*graphic;
+	Ui::MainWindow	*ui;
+	QTimer			*timer;
+	int				max_sens;
+	bool			draw;
 };
 #endif // MAINWINDOW_H

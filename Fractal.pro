@@ -19,12 +19,14 @@ SOURCES += \
     fractal_base.cpp \
     fractal_mandelbrot.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    myscene.cpp
 
 HEADERS += \
     fractal_base.h \
     fractal_mandelbrot.h \
-    mainwindow.h
+    mainwindow.h \
+    myscene.h
 
 FORMS += \
     mainwindow.ui
