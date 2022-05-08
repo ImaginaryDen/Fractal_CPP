@@ -4,8 +4,10 @@
 #include <QMainWindow>
 #include <QImage>
 #include <QTimer>
+#include <QDebug>
 #include <QGraphicsScene>
 #include "fractal_mandelbrot.h"
+#include "fractal_julia.h"
 #include "myscene.h"
 
 QT_BEGIN_NAMESPACE
@@ -22,10 +24,16 @@ public:
 
 private slots:
 
+	void on_insert_mandelbrot_triggered();
+	void on_insert_julia_triggered();
+
 private:
+	void setValue(int value);
 	void draw_fractal();
+	void set_fractal(fractal_base *fractal);
 
 	fractal_base	*fractal;
+	fractal_base	ref_fractal;
 	MyScene			*graphic;
 	Ui::MainWindow	*ui;
 	QTimer			*timer;

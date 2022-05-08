@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     fractal_base.cpp \
+    fractal_julia.cpp \
     fractal_mandelbrot.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -24,6 +25,7 @@ SOURCES += \
 
 HEADERS += \
     fractal_base.h \
+    fractal_julia.h \
     fractal_mandelbrot.h \
     mainwindow.h \
     myscene.h

@@ -21,12 +21,21 @@ protected:
 	int				sensibility;
 	int				win_width;
 	int				win_height;
+	complex<double>	const_value;
 
-	virtual QRgb	iter_color(int itr);
 public:
 	fractal_base(int width = 0, int height = 0);
+	fractal_base(const fractal_base& copy);
 
-	virtual QRgb	get_color(double x, double y) = 0;
+	fractal_base	&operator =(const fractal_base &copy);
+	bool			operator ==(const fractal_base *other);
+	bool			operator !=(const fractal_base *other);
+
+	virtual ~fractal_base(){}
+	virtual QRgb	get_color(double x, double y)
+		{return qRgb(static_cast<int>(x) % 255, static_cast<int>(y) % 255, static_cast<int>(x*y) % 255);}
+
+	QRgb			iter_color(int itr);
 	void			set_sensibility(int new_sens);
 	void			resize(int width, int height);
 	void			set_coord(long double x, long double y);
@@ -35,6 +44,9 @@ public:
 	void			zoom_on(long double x, long double y);
 	void			zoom_off();
 	int				get_sensibility();
+	long double		get_zoom();
+	long double		get_y();
+	long double		get_x();
 
 	friend void draw_fractal_tread(fractal_base *fractal , QImage *img, int start, int size);
 };
