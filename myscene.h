@@ -1,6 +1,7 @@
 #ifndef MYSCENE_H
 #define MYSCENE_H
 
+#include "IGetFractal.h"
 #include <QGraphicsScene>
 #include <QGraphicsSceneMouseEvent>
 #include <QTimer>
@@ -14,15 +15,16 @@ class MyScene : public QGraphicsScene
 	Q_OBJECT
 
 public:
-	MyScene(fractal_base *&fractal, QObject *parent = 0);
-	~MyScene();
+    MyScene(IGetFractal *fractal);
+    ~MyScene();
+    bool drow = 1;
 private:
 	void mousePressEvent(QGraphicsSceneMouseEvent * event);
 	void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
 	void wheelEvent(QGraphicsSceneWheelEvent *event);
 
-	QPointF     previousPoint;
-	fractal_base	*&fractal;
+    IGetFractal *cur_fractal;
+    QPointF     previousPoint;
 };
 
 #endif // MYSCENE_H

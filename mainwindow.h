@@ -6,38 +6,41 @@
 #include <QTimer>
 #include <QDebug>
 #include <QGraphicsScene>
-#include "fractal_mandelbrot.h"
-#include "fractal_julia.h"
 #include "myscene.h"
+#include "fractal_julia.h"
+#include "fractal_mandelbrot.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class MainWindow : public QMainWindow, IGetFractal
 {
 	Q_OBJECT
 
 public:
 	MainWindow(QWidget *parent = nullptr);
-	~MainWindow();
-
-private slots:
-
-	void on_insert_mandelbrot_triggered();
-	void on_insert_julia_triggered();
+    ~MainWindow();
+    fractal_base *get_curent_fractal() override;
 
 private:
 	void setValue(int value);
 	void draw_fractal();
-	void set_fractal(fractal_base *fractal);
+    void set_fractal(int f);
 
-	fractal_base	*fractal;
-	fractal_base	ref_fractal;
-	MyScene			*graphic;
+    std::vector<fractal_base *> fractals = {
+        new fractal_mandelbrot(), new fractal_julia()};
+
+private slots:
+
+    void on_insert_mandelbrot_triggered(){set_fractal(0);};
+    void on_insert_julia_triggered(){set_fractal(1);};
+
+private:
+    vector<fractal_base *>::iterator fractal;
+    MyScene			graphic;
 	Ui::MainWindow	*ui;
 	QTimer			*timer;
-	int				max_sens;
-	bool			draw;
+    const int       max_sens = 200;
 };
 #endif // MAINWINDOW_H
