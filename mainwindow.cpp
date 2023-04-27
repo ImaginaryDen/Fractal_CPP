@@ -54,4 +54,3 @@ void MainWindow::setValue(int value)
     (*this->fractal)->set_sensibility(value);
     graphic.drow = 1;
 }
-

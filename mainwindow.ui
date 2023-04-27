@@ -33,7 +33,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -46,6 +46,7 @@
      </property>
      <addaction name="insert_mandelbrot"/>
      <addaction name="insert_julia"/>
+     <addaction name="insert_sierpinski"/>
     </widget>
     <addaction name="menu_2"/>
    </widget>
@@ -66,6 +67,11 @@
   <action name="insert_julia">
    <property name="text">
     <string>Джулиа</string>
+   </property>
+  </action>
+  <action name="insert_sierpinski">
+   <property name="text">
+    <string>Ковер Серпинского</string>
    </property>
   </action>
  </widget>

@@ -23,16 +23,18 @@ void MyScene::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 					   , previousPoint.y() - event->scenePos().y());
 	QImage img(width(), height(), QImage::Format_RGB32);
 	img.fill(fractal->iter_color(0));
-	QPainter painter(&img);
-	painter.translate(event->scenePos().x() - previousPoint.x(),
-					  event->scenePos().y() - previousPoint.y());
-	render(&painter);
+	{
+		QPainter painter(&img);
+		painter.translate(event->scenePos().x() - previousPoint.x(),
+						  event->scenePos().y() - previousPoint.y());
+		render(&painter);
+	}
 	int start = clock();
 	fractal->draw_fractal(&img);
 	cout << clock() - start << endl;
 	addPixmap(QPixmap::fromImage(img));
 	previousPoint = event->scenePos();
-    drow = 1;
+	drow = 0;
 }
 
 void MyScene::wheelEvent(QGraphicsSceneWheelEvent *event)

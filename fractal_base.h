@@ -34,13 +34,13 @@ public:
 	virtual ~fractal_base(){}
 	virtual QRgb	get_color(double x, double y)
 		{return qRgb(static_cast<int>(x) % 255, static_cast<int>(y) % 255, static_cast<int>(x*y) % 255);}
+    virtual void	draw_fractal(QImage *img);
 
 	QRgb			iter_color(int itr);
 	void			set_sensibility(int new_sens);
 	void			resize(int width, int height);
 	void			set_coord(long double x, long double y);
-	void			dif_coord(long double x, long double y);
-	void			draw_fractal(QImage *img);
+    virtual void			dif_coord(long double x, long double y);
 	void			zoom_on(long double x, long double y);
 	void			zoom_off();
 	int				get_sensibility();

@@ -6,6 +6,7 @@
 #include <QTimer>
 #include <QDebug>
 #include <QGraphicsScene>
+#include "fractal_sierpinski.h"
 #include "myscene.h"
 #include "fractal_julia.h"
 #include "fractal_mandelbrot.h"
@@ -29,12 +30,13 @@ private:
     void set_fractal(int f);
 
     std::vector<fractal_base *> fractals = {
-        new fractal_mandelbrot(), new fractal_julia()};
+        new fractal_mandelbrot(), new fractal_julia(), new fractal_Sierpinski()};
 
 private slots:
 
     void on_insert_mandelbrot_triggered(){set_fractal(0);};
     void on_insert_julia_triggered(){set_fractal(1);};
+    void on_insert_sierpinski_triggered(){set_fractal(2);};
 
 private:
     vector<fractal_base *>::iterator fractal;
