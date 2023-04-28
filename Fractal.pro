@@ -20,6 +20,7 @@ SOURCES += \
     fractal_julia.cpp \
     fractal_mandelbrot.cpp \
     fractal_sierpinski.cpp \
+    fractalpifagortree.cpp \
     main.cpp \
     mainwindow.cpp \
     myscene.cpp
@@ -30,6 +31,7 @@ HEADERS += \
     fractal_julia.h \
     fractal_mandelbrot.h \
     fractal_sierpinski.h \
+    fractalpifagortree.h \
     mainwindow.h \
     myscene.h
 

@@ -4,7 +4,7 @@
 void fractal_Sierpinski::draw_fractal(QImage *img)
 {
     int size = min(img->width(), img->height());
-    drawSierpinski(img, x, size + y, size, (sensibility / 10) - 1);
+	drawSierpinski(img, x, size + y, size, sensibility / 10 - 1);
 }
 
 void fractal_Sierpinski::drawSierpinski(QImage *img, long double x, long double y, int size, int depth)

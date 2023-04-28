@@ -47,6 +47,7 @@
      <addaction name="insert_mandelbrot"/>
      <addaction name="insert_julia"/>
      <addaction name="insert_sierpinski"/>
+     <addaction name="insert_pifagor_tree"/>
     </widget>
     <addaction name="menu_2"/>
    </widget>
@@ -72,6 +73,11 @@
   <action name="insert_sierpinski">
    <property name="text">
     <string>Ковер Серпинского</string>
+   </property>
+  </action>
+  <action name="insert_pifagor_tree">
+   <property name="text">
+    <string>Дерево Пифогора</string>
    </property>
   </action>
  </widget>
