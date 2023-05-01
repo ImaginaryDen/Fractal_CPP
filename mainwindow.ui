@@ -48,6 +48,8 @@
      <addaction name="insert_julia"/>
      <addaction name="insert_sierpinski"/>
      <addaction name="insert_pifagor_tree"/>
+     <addaction name="insert_koch"/>
+     <addaction name="insert_newton"/>
     </widget>
     <addaction name="menu_2"/>
    </widget>
@@ -78,6 +80,16 @@
   <action name="insert_pifagor_tree">
    <property name="text">
     <string>Дерево Пифогора</string>
+   </property>
+  </action>
+  <action name="insert_koch">
+   <property name="text">
+    <string>Снежинка Коха</string>
+   </property>
+  </action>
+  <action name="insert_newton">
+   <property name="text">
+    <string>Ньютон</string>
    </property>
   </action>
  </widget>

@@ -7,6 +7,8 @@
 #include <QDebug>
 #include <QGraphicsScene>
 #include "fractal_sierpinski.h"
+#include "fractalkochsnowflake.h"
+#include "fractalnewton.h"
 #include "fractalpifagortree.h"
 #include "myscene.h"
 #include "fractal_julia.h"
@@ -31,7 +33,12 @@ private:
     void set_fractal(int f);
 
     std::vector<fractal_base *> fractals = {
-		new fractal_mandelbrot(), new fractal_julia(), new fractal_Sierpinski(), new FractalPifagorTree()};
+		new fractal_mandelbrot(),
+		new fractal_julia(),
+		new fractal_Sierpinski(),
+		new FractalPifagorTree(),
+		new FractalKochSnowflake(),
+		new FractalNewton()};
 
 private slots:
 
@@ -39,6 +46,8 @@ private slots:
     void on_insert_julia_triggered(){set_fractal(1);};
     void on_insert_sierpinski_triggered(){set_fractal(2);};
 	void on_insert_pifagor_tree_triggered(){set_fractal(3);};
+	void on_insert_koch_triggered(){set_fractal(4);};
+	void on_insert_newton_triggered(){set_fractal(5);};
 
 private:
     vector<fractal_base *>::iterator fractal;
